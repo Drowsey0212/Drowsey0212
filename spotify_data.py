@@ -1,3 +1,9 @@
+#Using Spotify's API, this is code to extract attribute-level data for songs of your choosing. 
+#You'll need to set up an account to get a cid and secret key
+#Then, you'll need to create a playlist on your own Spotify account, including all songs you want to analyze. 
+#Finally, copy the playlist URL, and extra the playlist id at the end of the URL. 
+#everything you'll need to customize is preceded by "_replace". CTRL + F "_replace" and you'll be good to go. 
+
 #download package
 import spotipy
 from spotipy.oauth2 import SpotifyClientCredentials
@@ -5,8 +11,8 @@ import pandas as pd
 
 
 #CONNECT TO SPOTIFY - make spotify for developers account to get cid and secret id
-cid = "77c6877f5c1a4daf9823c57925ae347b"
-secret = "1af1d0fb7a7e4bce85c18ef2da7f8726"
+cid = "_replace_cid"
+secret = "_replace_secretkey"
 client_credentials_manager = SpotifyClientCredentials(client_id=cid, client_secret=secret)
 sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
@@ -14,7 +20,7 @@ sp = spotipy.Spotify(client_credentials_manager=client_credentials_manager)
 
 #GET SONG METRICS FROM PLAYLIST
 #connect to playlist
-playlist = sp.user_playlist("userid","7DkkT3pmuRAgilneDD4UBE?si=a84965fed428493b") 
+playlist = sp.user_playlist("userid","_replace_playlistid") 
 songs = playlist["tracks"]["items"] 
 ids = [] 
 
@@ -47,7 +53,7 @@ genre = []
 
 
 #Get playlist
-track_results = sp.user_playlist("userid", "7DkkT3pmuRAgilneDD4UBE?si=a84965fed428493b")["tracks"]["items"]
+track_results = sp.user_playlist("userid", "_replace_playlistid")["tracks"]["items"]
 
 for t in track_results:
     artist_name.append(t['track']['artists'][0]['name'])
