@@ -1,5 +1,5 @@
 #Using Spotify's API, this is code to extract attribute-level data for songs of your choosing. 
-#You'll need to set up an account to get a cid and secret key
+#You'll need to set up a Spotify Web Developer account to get a cid and secret key. 
 #Then, you'll need to create a playlist on your own Spotify account, including all songs you want to analyze. 
 #Finally, copy the playlist URL, and extra the playlist id at the end of the URL. 
 #everything you'll need to customize is preceded by "_replace". CTRL + F "_replace" and you'll be good to go. 
